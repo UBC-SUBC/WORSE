@@ -1,0 +1,59 @@
+Scenario: 
+    1) Sub stuck tilted upwards - going down constant
+    2) Put foam on left but tilting negatively - constant down
+    3) foam on right but overshoots and still tilting positively - going up fast
+    4) foam left and equilibrium - going up fast
+    5) equilibrium - bring back to centre of pool
+
+Assume the pool has a depth of 20 and we start at 10
+
+--Stage 1--
+1,0,0,10 - 1112
+1,0,0,9 - 1112
+
+--Stage 2--
+1,-1,0,8 - 1102
+0,-1,0,7 - 1102 - this line missing in actual
+-1,-1,1,6 - 2103
+-1,-1,1,5 - 2103
+
+--Stage 3--
+-1,1,1,6 - 2211
+0,1,1,7 - 2212
+0,1,1,9 - 2312 - actual was 2212
+1,1,1,12 - 2313 - actual was 2212
+
+-Stage 4--
+1,-1,-1,16 - 1100
+
+--Stage 5--
+0,0,0,19 - 1100
+0,0,0,17 - 1100
+0,0,0,15 - 1100
+0,0,0,13 - 1100
+0,0,0,12 - 1100
+0,0,0,11 - 1100
+
+Actual output:
+Instruction: 1112
+Instruction: 1112
+Instruction: 1102
+Instruction: 2103
+Instruction: 2103
+Instruction: 2211
+Instruction: 2212
+Instruction: 2212
+Instruction: 2113
+Instruction: 1100
+Instruction: 1100
+Instruction: 1100
+Instruction: 1100
+Instruction: 1200
+Instruction:    0
+
+
+ - only output 15 instructions instead of 19
+   - is it cuz of the transitions or sth?
+ - some lines were different when comparing expected and actual (might be my mistake when thinking of expected..)
+ - the mistake in lines 23 and 24 aren't that big a deal imo since its just the degree of how much we should change direction
+   - as long as direction is correct and the degree isn't far by much it should be fine i think
