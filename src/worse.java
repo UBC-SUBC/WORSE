@@ -24,7 +24,8 @@ public class worse{
 			ArrayList<Double> depthList = new ArrayList<>(); 
 
 			double theta, deltaT, acceleration;
-			String filePath = "C:\\Users\\cxson\\OneDrive\\Desktop\\Documents\\SUBC\\BAD\\src\\main\\java\\BADtesting\\realTest.csv";
+			//String filePath = "C:\\Users\\cxson\\OneDrive\\Desktop\\Documents\\SUBC\\WORSE\\src\\realTest.csv";
+			String filePath = "C:\\Users\\ASUS\\Documents\\SUBC\\WORSE\\src\\realTest.csv";
 			File file = new File(filePath);
 			int numTestCases = 17; //to ensure we get the correct number of output instructions (value should change; 233 for current case)
 			int numInstructions = 0; 

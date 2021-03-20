@@ -12,25 +12,26 @@ Assume the pool has a depth of 20 and we start at 10
 1,0,0,9 - 1112
 
 --Stage 2--
-1,-1,0,8 - 1102
-0,-1,0,7 - 1102 - this line missing in actual
+1,-1,0,8 - (-1) - Case 8: Observe Further (everything beyond this is offset by 1)
+0,-1,0,7 - 1102 
 -1,-1,1,6 - 2103
 -1,-1,1,5 - 2103
 
 --Stage 3--
--1,1,1,6 - 2211
+-1,1,1,6 - 2211 
 0,1,1,7 - 2212
-0,1,1,9 - 2312 - actual was 2212
-1,1,1,12 - 2313 - actual was 2212
+0,1,1,9 - 2212 
+1,1,1,12 - 2113 
 
 -Stage 4--
-1,-1,-1,16 - 1100
+1,-1,-1,16 - (-1) - Case 9: Observe Further (everything beyond this is offset by 1)
 
 --Stage 5--
 0,0,0,19 - 1100
 0,0,0,17 - 1100
 0,0,0,15 - 1100
 0,0,0,13 - 1100
+______________________ output beyond this can be ignored
 0,0,0,12 - 1100
 0,0,0,11 - 1100
 
@@ -52,7 +53,7 @@ Instruction: 1200
 Instruction:    0
 
 
- - only output 15 instructions instead of 19
+ - only output 15 instructions instead of 17
    - is it cuz of the transitions or sth?
  - some lines were different when comparing expected and actual (might be my mistake when thinking of expected..)
  - the mistake in lines 23 and 24 aren't that big a deal imo since its just the degree of how much we should change direction
